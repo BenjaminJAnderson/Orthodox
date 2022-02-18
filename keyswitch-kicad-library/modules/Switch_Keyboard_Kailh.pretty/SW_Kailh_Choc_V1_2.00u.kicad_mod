@@ -1,6 +1,6 @@
 (footprint "SW_Kailh_Choc_V1_2.00u" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 620D4F9F)
+  (tedit 620FD0C0)
   (descr "Kailh Choc V1 keyswitch, http://www.kailh.com/en/Products/Ks/CS/")
   (tags "Kailh Choc V1 Keyswitch Switch 2.00u")
   (attr through_hole)
@@ -64,9 +64,9 @@
     (scale (xyz 1 1 1))
     (rotate (xyz 0 -180 0))
   )
-  (model "${KIPRJMOD}/3D FIles/Kailh-Choc-Keycap/Kailh LP Choc Burnt Orange.IGS"
-    (offset (xyz 0 0 3))
+  (model "${KIPRJMOD}/keyswitch-kicad-library/modules/packages3d/Switch_Keyboard_Kailh.3dshapes/SW_Kailh_Choc_V1.step"
+    (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 90 180 90))
+    (rotate (xyz 0 0 0))
   )
 )
