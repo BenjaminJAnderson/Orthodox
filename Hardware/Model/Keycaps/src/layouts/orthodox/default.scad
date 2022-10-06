@@ -1,6 +1,22 @@
-include <./includes.scad>
-//skin() // I suck at math and can't translate [rounded_square] might not display
-center = [
+include <../layout.scad>
+
+60_percent_default_layout = [
+  [1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+  [1.5,1,1,1,1,1,1,1,1,1,1,1,1,1.5],
+  [1.75,1,1,1,1,1,1,1,1,1,1,1,2.25],
+  [2.25,1,1,1,1,1,1,1,1,1,1,2.75],
+  [1.25,1.25,1.25,6.25,1.25,1.25,1.25,1.25]
+];
+
+60_percent_legends = [
+  ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "⌫"],
+  ["tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\"],
+  ["caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "enter"],
+  ["shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "shift"],
+  ["ctl", "win", "alt", "", "mnu", "win", "alt", "ctl"],
+];
+
+c_legends = [
   ["esc",      "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "0"  , ""   , "delete"],
   ["tab",      "Q" , "W" , "E" , "R" , "T" , "Y" , "U" , "I" , "O" , "P"  , "backspace"    ],
   ["capslock", "A" , "S" , "D" , "F" , "G" , "H" , "J" , "K" , "L" , ""   , ""   , "enter" ],
@@ -9,7 +25,7 @@ center = [
   ["ctrl",     "⊞" , "lt", ""                                , ""  , "←"  , "↓"  , "→"     ],
 ];
 
-bottom_left = [
+bl_legends = [
   ["",         "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"   ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""   , ""             ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "["  , "]"  , ""      ],
@@ -18,7 +34,7 @@ bottom_left = [
   ["",         ""  , ""  , ""                                , "'" , ""   , ""   , ""      ],
 ];
 
-top_left = [
+tl_legends = [
   ["",         "~" , "!" , "?" , "£" , "$" , "#" , "%" , "@" , "^" , "*"  , "_"  , ""      ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""   , ""             ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "{"  , "}"  , ""      ],
@@ -27,7 +43,7 @@ top_left = [
   ["",         ""  , ""  , ""  ,                               "'" , ""   , ""   , ""      ],
 ];
 
-top_right = [
+tr_legends = [
   ["",         "#" , "#" , "#" , "#" , "#" , "#" , "#" , "#" , "#" , "#"  , "#"  , ""      ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""   , ""             ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "("  , ")"  , ""      ],
@@ -36,7 +52,7 @@ top_right = [
   ["",         ""  , ""  , ""  ,                               "|" , ""   , ""   , ""      ],
 ];
 
-bottom_right = [
+br_legends = [
   ["",         "`" , "¬" , "×" , "÷" , "+" , "-" , "=" , "α" , "β" , "π"  , "Ω"  , ""      ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""   , ""             ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "⟨"  , "⟩"  , ""      ],
@@ -45,7 +61,7 @@ bottom_right = [
   ["",         ""  , ""  , ""  ,                               "|" , ""   , ""   , ""      ],
 ];
 
-height_list = [
+len_layout = [
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 1    , 1       ],
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 1              ],
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 1    , 2       ],
@@ -54,7 +70,7 @@ height_list = [
   [1,          1   , 1   , 6   ,                               1   , 1    , 1    , 1       ], 
 ];
 
-width_list = [
+wid_layout = [
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 1    , 1       ],
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 2              ],
   [1,          1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1   , 1    , 1    , 1       ],
@@ -63,48 +79,7 @@ width_list = [
   [1,          1   , 1   , 6   ,                               1   , 1    , 1    , 1       ], 
 ];
 
-$font_size = 4;
-$font="DejaVu Sans Mono:style=Book";
-$stem_type = "choc";
-$support_type = "bars";
-$stem_support_type = "disable";
-// $stem_inset = -3;
-$dish_type = "disable";
-$inset_legend_depth = 2;
 
-$rounded_key = true;
-$minkowski_radius = 1.25;
-$corner_radius = 0.5;
-
-$key_height = 1.0;
-$key_length = 1.0;
-$total_depth = 11.5;
-
-
-$bottom_key_width = 18.16;
-$bottom_key_height = 18.16;
-$width_difference = 0;
-$height_difference = 0;
-
-$top_tilt = 0;
-$top_tilt_y = 0;
-$top_skew = 0;
-$top_skew_x = 0;
-
-for (y=[0:len(center)-1]) {
-  for (x=[0:len(center[y])-1]) {
-    translate_u(x,-y) {
-      legend(center[y][x], [0,0]) {
-        legend(bottom_left[y][x], [-1,1], size=2) {
-          legend(bottom_right[y][x], [1,1], size=2) {
-            legend(top_left[y][x], [-1,-1], size=2) {
-              legend(top_right[y][x], [1,-1], size=2) {
-                low_profile() key();
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+module orthodox_default(profile) {
+  layout(len_layout, profile, c_legends, row_sculpting_offset=1) children();
 }
