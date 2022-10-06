@@ -5,6 +5,10 @@ module u(u=1) {
   children();
 }
 
+module 0_5u() {
+  u(0.5) children();
+}
+
 module 1u() {
   u(1) children();
 }
@@ -46,6 +50,10 @@ module 6_25u() {
 module uh(u=1) {
   $key_height = u;
   children();
+}
+
+module 0_5uh() {
+  uh(0.5) children();
 }
 
 module 1uh() {

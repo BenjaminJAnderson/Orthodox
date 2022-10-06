@@ -269,6 +269,10 @@ module 1u() {
   u(1) children();
 }
 
+module 0_5u() {
+  u(0.5) children();
+}
+
 module 1_25u() {
   u(1.25) children();
 }
