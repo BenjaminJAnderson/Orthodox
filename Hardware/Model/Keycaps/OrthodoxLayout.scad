@@ -1,12 +1,12 @@
 include <./includes.scad>
 //skin() // I suck at math and can't translate [rounded_square] might not display
 center = [
-  ["Esc"     , "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "0"  , ""   , "Del"],
+  ["Esc"     , "1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "0"  , ""   , "Del"   ],
   ["Tab"     , "Q" , "W" , "E" , "R" , "T" , "Y" , "U" , "I" , "O" , "P"  , "Backspace"    ],
-  ["Caps"    , "A" , "S" , "D" , "F" , "G" , "H" , "J" , "K" , "L" , ""   , ""   , "" ],
-  [            ""  , "Z" , "X" , "C" , "V" , "B" , "N" , "M" , ""  , ""   , ""            ],
+  ["Caps"    , "A" , "S" , "D" , "F" , "G" , "H" , "J" , "K" , "L" , ""   , ""   , ""      ],
+  [            ""  , "Z" , "X" , "C" , "V" , "B" , "N" , "M" , ""  , ""   , ""             ],
   [            ""  , ""                                                                    ],
-  ["Ctrl"    , "" , "Alt", ""                                , ""  , ""  , ""  , ""     ],
+  ["Ctrl"    , "" , "Alt", ""                                , ""  , ""  , ""  , ""        ],
 ];
 
 bottom_left = [
@@ -28,7 +28,7 @@ top_left = [
 ];
 
 top_right = [
-  ["",         "" , "" , "" , "" , "" , "" , "" , "" , "" , ""  , ""  , ""      ],
+  ["",         "" , "" , f03e , "" , "" , "" , "" , "" , "" , ""  , ""  , ""      ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""   , ""             ],
   ["",         ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "("  , ")"  , ""      ],
   [            ""  , ""  , ""  , ""  , ""  , ""  , ""  , ""  , "<" , ">"  , ""             ],
@@ -91,7 +91,7 @@ font_size_list = [
 ];
 
 $font_size = 4;
-$font="Roboto:style=Bold";
+$font="Font Awesome 6 Free:style=Solid";
 // $stem_type = "choc";
 $support_type = "bars";
 $stem_support_type = "disable";
